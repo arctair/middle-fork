@@ -1,0 +1,7 @@
+[
+  {
+    "remote": "s3://prd-tnm/StagedProducts/Hydrography/NHD/State/GPKG/NHD_H_Washington_State_GPKG.zip",
+    "local": "zip.d/",
+    "unzip": "vector.d/"
+  }
+]

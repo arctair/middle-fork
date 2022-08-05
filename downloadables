@@ -3,5 +3,9 @@
     "remote": "s3://prd-tnm/StagedProducts/Hydrography/NHD/State/GPKG/NHD_H_Washington_State_GPKG.zip",
     "local": "zip.d/",
     "unzip": "vector.d/"
+  },
+  {
+    "remote": "yagni:faster/usgs-3dep-13.tif.d/n48w122.tif",
+    "local": "raster.d/"
   }
 ]

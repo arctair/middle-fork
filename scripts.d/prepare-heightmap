@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+gdalwarp -overwrite -of GTiff -t_srs EPSG:26910 -r cubic raster.d/n48w122.tif raster.d/n48w122.26910.tif
+gdalwarp -overwrite -of GTiff -cutline vector.d/middle-fork-snoqualmie-hu-26910.shp -cl middle-fork-snoqualmie-hu-26910 -crop_to_cutline raster.d/n48w122.26910.tif raster.d/middle-fork-snoqualmie-hu.tif
+gdalinfo -mm raster.d/middle-fork-snoqualmie-hu.tif | grep Computed | cut -d '=' -f2 | tr ',' ' ' > raster.d/middle-fork-snoqualmie-hu.tif.min-max
+gdal_translate -scale `cat raster.d/middle-fork-snoqualmie-hu.tif.min-max` 0 65535 -ot UInt16 raster.d/middle-fork-snoqualmie-hu.tif raster.d/middle-fork-snoqualmie-hu.scaled.tif
